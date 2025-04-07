@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./App.css";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 
@@ -9,9 +10,15 @@ const App = () => {
     setIsRegistered(registered)
   }
 
+  function login(loged){
+    if (loged == true){
+      console.log("User is logged in successfully")
+    }
+  }
+
   return (
-    <div>
-      {isRegisterd? <Login registered={getData} />:<Signup registered={getData}/>}
+    <div className="home-container">
+      {isRegisterd? <Login registered={getData} loged={login}/>:<Signup registered={getData}/>}
     </div>
   );
 };
