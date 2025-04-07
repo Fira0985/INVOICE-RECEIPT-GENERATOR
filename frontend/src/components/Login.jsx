@@ -20,6 +20,7 @@ const Login = (props) => {
             const data = await response.json();
 
             if (response.ok) {
+                props.name(data.name)
                 alert(data.message);
                 form.reset(); // Reset form after successful registration
                 props.loged(true); // Notify parent component

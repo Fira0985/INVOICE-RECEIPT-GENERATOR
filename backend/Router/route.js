@@ -49,6 +49,7 @@ route.get("/login", (req,res) => {
         // If found, proceed checking the password
         try {
             const passwordCheckSql = 'select password from users where email = ?';
+            const getNameSql = 'select name from users where email = ?'
             pool.query(passwordCheckSql, [email], (err, result) => {
                 if (err) return res.status(500).json({ error: err.message });
 
@@ -56,7 +57,10 @@ route.get("/login", (req,res) => {
                     if (err) return res.status(500).json({error:err.message});
 
                     if (isMatch){
-                        return res.status(201).json({ message: 'User loged in Successfully' });
+                        pool.query(getNameSql, [email], (err, resultName)=>{
+                            if (err) return res.status(500).json({error:err.message});
+                            return res.status(201).json({ message: 'User loged in Successfully', name:  resultName[0].name});
+                        })
                     } else {
                         return res.status(400).json({message: 'Wrong password try again!'})
                     }
