@@ -1,25 +1,53 @@
-.invoice-list-container {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 350px;
+.invoice-table {
+    margin-top: 1rem;
+    background: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
 }
 
-.invoice-list-container ul {
-    list-style-type: none;
-    padding: 0;
+.search-input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
 }
 
-.invoice-list-container li {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
+table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.status-paid {
-    color: green;
+th,
+td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
 }
 
-.status-unpaid {
-    color: red;
+thead {
+    background-color: #f3f3f3;
+}
+
+.status {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.status.paid {
+    background-color: #e1f7e9;
+    color: #249b50;
+}
+
+.status.unpaid {
+    background-color: #fff0db;
+    color: #ff9900;
+}
+
+@media (max-width: 768px) {
+    .invoice-table{
+        height: 100vh;
+    }
 }

@@ -1,0 +1,14 @@
+.payments-content {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #f5f7fa;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .payments-content{
+        height: 100vh;
+    }
+}

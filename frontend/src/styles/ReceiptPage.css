@@ -1,0 +1,14 @@
+.receipt-content {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: #fafafa;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #444;
+}
+
+@media (max-width: 768px) {
+    .receipt-content{
+        height: 100vh;
+    }
+}

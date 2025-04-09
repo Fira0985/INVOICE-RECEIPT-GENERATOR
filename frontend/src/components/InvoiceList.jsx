@@ -1,23 +1,44 @@
 import React from "react";
 import "../styles/InvoiceList.css";
 
-const InvoiceList = () => {
-    const invoices = [
-        { id: "INV 1001", date: "03/25/2025", status: "Paid" },
-        { id: "INV 1002", date: "03/25/2025", status: "Unpaid" },
-        { id: "INV 1003", date: "03/25/2025", status: "Paid" }
-    ];
-
+const InvoiceList = (props) => {
+    
     return (
-        <div className="invoice-list-container">
-            <h2>Invoices</h2>
-            <ul>
-                {invoices.map((invoice) => (
-                    <li key={invoice.id} className={`status-${invoice.status.toLowerCase()}`}>
-                        {invoice.id} - {invoice.date} - {invoice.status}
-                    </li>
-                ))}
-            </ul>
+        <div className="dashboard-container">
+            <main className="dashboard-main">
+                <div className="dashboard-header">
+                    <h1>Invoices</h1>
+                    <span className="user-info">{props.name} | English</span>
+                </div>
+
+                <div className="invoice-table">
+                    <input type="text" className="search-input" placeholder="Search by customer..." />
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Invoice #</th>
+                                <th>Customer</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>INV-001</td>
+                                <td>John Doe</td>
+                                <td>2025-04-08</td>
+                                <td><span className="status paid">Paid</span></td>
+                            </tr>
+                            <tr>
+                                <td>INV-002</td>
+                                <td>Jane Smith</td>
+                                <td>2025-04-06</td>
+                                <td><span className="status unpaid">Unpaid</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </main>
         </div>
     );
 };

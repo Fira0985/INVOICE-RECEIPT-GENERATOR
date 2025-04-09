@@ -2,6 +2,7 @@
 .dashboard-container {
     display: flex;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 98vw;
 }
 
 .sidebar {
@@ -76,23 +77,42 @@
 .dashboard-card {
     flex: 1;
     text-align: center;
-    padding: 20px;
-    background-color: white;
-    border-radius: 12px;
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 16px;
     border: 1px solid #e5e7eb;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.07);
+}
+
+.dashboard-card:focus-within {
+    outline: 2px solid #2563eb;
+    outline-offset: 4px;
 }
 
 .card-title {
-    color: #6b7280;
-    font-size: 0.875rem;
+    color: #4b5563;
+    /* More professional gray */
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    margin-bottom: 4px;
 }
 
 .card-count {
-    font-size: 1.75rem;
-    font-weight: bold;
-    margin-top: 6px;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #111827;
+    /* Strong readable dark text */
+    margin-top: 8px;
 }
+
 
 .text-default {
     color: #374151;
@@ -118,16 +138,17 @@
 }
 
 .new-invoice-btn:hover {
-    background-color: black;
+    background-color: darkblue;
 }
 
 @media (max-width: 768px) {
     .dashboard-container {
         flex-direction: column;
+        width: 100vw;
     }
 
     .sidebar {
-        width: 100%;
+        width: 90vw;
         height: auto;
         padding: 16px;
         box-shadow: none;
