@@ -48,6 +48,6 @@ thead {
 
 @media (max-width: 768px) {
     .invoice-table{
-        height: 100vh;
+        height: 95vh;
     }
 }
